@@ -99,14 +99,15 @@ $("#trash").droppable({
   accept: ".card .list-group-item",
   tolerance: "touch",
   drop: function (event, ui) {
-    console.log("drop") // remove dragged element from the dom
+    // remove dragged element from the dom
     ui.draggable.remove();
+
   },
-  over: function (event, ui) {
+  over: function(event, ui) {
     console.log(ui);
   },
-  out: function (event, ui) {
-    console.log("out");
+  out: function(event, ui) {
+    console.log(ui);
   }
 });
 
