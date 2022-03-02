@@ -98,7 +98,7 @@ $(".card .list-group").sortable({
 $("#trash").droppable({
   accept: ".card .list-group-item",
   tolerance: "touch",
-  drop: function (event, ui) {
+  drop: function(event, ui) {
     // remove dragged element from the dom
     ui.draggable.remove();
 
@@ -110,13 +110,6 @@ $("#trash").droppable({
     console.log(ui);
   }
 });
-
-
-    // //add task data to the temp arrays as an object
-    // tempArr.push({
-    //   text: text,
-    //   date: date
-    // });
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function () {
   // clear values
@@ -172,7 +165,7 @@ $(".list-group").on("blur", "textarea", function () {
   var text = $(this)
     .val();
 
-  //get status type and psotiion in the list 
+  //get status type and position in the list 
   var status = $(this)
     .closest(".list-group")
     .attr("id")
@@ -196,23 +189,23 @@ $(".list-group").on("blur", "textarea", function () {
   $(this).replaceWith(taskP);
 });
 //due date as clicked
-$(".list-group").on("click", "span", function () {
+$(".list-group").on("click", "span", function() {
   //get current text
   var date = $(this)
     .text()
     .trim();
 
   //create new input element
-  var inputDate = $("<input>")
-    .attr("type", text)
+  var dateInput = $("<input>")
+    .attr("type", "text")
     .addClass("form-control")
     .val(date);
-  $(this).replaceWith(dataInput);
+  $(this).replaceWith(dateInput);
   //auto nring up calendar
-  dataInput.trigger("focus");
+  dateInput.trigger("focus");
 });
 // value of due date was changed
-$(".list-group").on("blur", "input[type='text']", function () {
+$(".list-group").on("change", "input[type='text']", function() {
   // get current text
   var date = $(this).val();
 
